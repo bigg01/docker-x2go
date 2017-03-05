@@ -6,7 +6,7 @@ RUN yum install -y  --setopt=tsflags=nodocs \
     http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm  \
     x2goserver-xsession openssh-server x2goserver x2goserver-xsession \
     x2golxdebindings pwgen firefox pulseaudio libcurl3 \
-    terminator nss_wrapper gettext
+    terminator gettext nss_wrapper
 
 RUN yum -y groupinstall Xfce --setopt=tsflags=nodocs 
 
