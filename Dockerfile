@@ -19,4 +19,4 @@ RUN chmod +x /start.sh && ./start.sh
 EXPOSE 22
 
 USER user
-CMD    ["/usr/sbin/sshd", "-f", "/home/user/ssh/sshd_config", "-D"]
+CMD    ["/usr/sbin/sshd", "-f", "/home/user/etc/ssh/sshd_config", "-D"]

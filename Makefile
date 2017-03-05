@@ -7,6 +7,8 @@ all: build
 
 build:
 	sudo docker build --rm=true -t $(NAME):$(VERSION) .
+clean:
+	sudo docker rm -f   $(NAME):$(VERSION) 
 
 test:
 	sudo docker run -p 2222:22 --rm=true $(NAME):$(VERSION)
