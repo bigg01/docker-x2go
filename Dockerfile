@@ -20,4 +20,4 @@ ADD ./sshd_config /home/user/etc/ssh/sshd_config
 EXPOSE 2022
 
 USER user
-CMD    ["/usr/sbin/sshd", "-f", "/home/user/etc/ssh/sshd_config", "-D"]
+CMD    ["/usr/sbin/sshd", "-f", "/home/user/etc/ssh/sshd_config", "-D", "-d"]
