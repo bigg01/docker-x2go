@@ -16,10 +16,10 @@ RUN yum -y groupinstall Xfce --setopt=tsflags=nodocs
 ADD ./start.sh /start.sh
 
 RUN chmod +x /start.sh && ./start.sh
+ADD ./run.sh  /home/x2gouser/run.sh
 ADD ./sshd_config /home/user/etc/ssh/sshd_config
+RUN chmod +x /home/x2gouser/run.sh
 EXPOSE 2022
 
 USER x2gouser
-ADD ./run.sh  /home/x2gouser/run.sh
-RUN chmod +x /home/x2gouser/run.sh
 CMD    ["sh", "-c", "/home/x2gouser/run.sh"]
