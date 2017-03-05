@@ -22,7 +22,7 @@ mkdir /var/run/sshd && \
 ssh-keygen -t rsa -f /home/user/etc/ssh/ssh_host_rsa_key -N '' && \
 ssh-keygen -t ecdsa -f /home/user/etc/ssh/ssh_host_ecdsa_key -N '' && \
 ssh-keygen -t ed25519 -f /home/user/etc/ssh/ssh_host_ed25519_key -N '' && \
-chown -R user: etc/ssh var/run
+chown -R user: /home/user/
 yum clean all
 }
 
