@@ -31,6 +31,7 @@ yum clean all
 
 # Generate passwd file based on current uid
 function generate_passwd_file() {
+HOME=/home/x2gouser
   export USER_ID=$(id -u)
   export GROUP_ID=$(id -g)
   grep -v ^x2gouser /etc/passwd > "$HOME/passwd"

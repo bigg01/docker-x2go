@@ -20,4 +20,7 @@ ADD ./sshd_config /home/user/etc/ssh/sshd_config
 EXPOSE 2022
 
 USER x2gouser
+ENV LD_PRELOAD libnss_wrapper.so
+ENV NSS_WRAPPER_PASSWD /home/x2gouser/passwd
+ENV NSS_WRAPPER_GROUP /etc/group
 CMD    ["/usr/sbin/sshd", "-f", "/home/user/etc/ssh/sshd_config", "-D", "-d"]
