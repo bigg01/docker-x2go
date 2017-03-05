@@ -1,0 +1,21 @@
+$ uname -a
+  CYGWIN_NT-6.0 vmbert2k8 1.5.25(0.156/4/2) 2008-03-06 17:01 i686 Cygwin
+  $ id
+  uid=1004(hein) gid=513(None) groups=513(None),545(Users)
+  $ pwd
+  /home/hein
+  $ mkdir -p etc var/run
+  $ cp /etc/sshd_config etc
+  $ vi etc/sshd_config
+  [Set `Port 2022']
+  [Set `HostKey /home/hein/etc/ssh_host_rsa_key']
+  [Set `UsePrivilegeSeparation no']
+  [Set `PidFile /home/hein/var/run/sshd.pid']
+  [:wq!]
+  $ ssh-keygen -t rsa -f /home/hein/etc/ssh_host_rsa_key -N ''
+  Generating public/private rsa key pair.
+  Your identification has been saved in /home/hein/etc/ssh_host_rsa_key.
+  Your public key has been saved in /home/hein/etc/ssh_host_rsa_key.pub.
+  The key fingerprint is:
+  02:5d:02:5d:e8:2e:c6:b9:4c:d9:93:6c:13:ef:5d:61 hein@vmbert2k8
+  $ /usr/sbin/sshd -f sshd_config -D
