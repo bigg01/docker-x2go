@@ -21,5 +21,5 @@ EXPOSE 2022
 
 USER x2gouser
 ADD ./run.sh  /home/x2gouser/run.sh
-RUN chmod +x /run.sh 
+RUN chmod +x /home/x2gouser/run.sh
 CMD    ["sh", "-c", "/home/x2gouser/run.sh"]
