@@ -2,7 +2,7 @@
 
 __create_x2gouser() {
 # Create a x2gouser to SSH into as.
-x2gouseradd x2gouser -m
+useradd x2gouser -m
 SSH_USERPASS=gogo
 echo -e "$SSH_USERPASS\n$SSH_USERPASS" | (passwd --stdin x2gouser)
 echo ssh x2gouser password: $SSH_USERPASS

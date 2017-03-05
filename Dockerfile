@@ -19,5 +19,5 @@ RUN chmod +x /start.sh && ./start.sh
 ADD ./sshd_config /home/user/etc/ssh/sshd_config
 EXPOSE 2022
 
-USER user
+USER x2gouser
 CMD    ["/usr/sbin/sshd", "-f", "/home/user/etc/ssh/sshd_config", "-D", "-d"]
