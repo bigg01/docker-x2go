@@ -17,7 +17,7 @@ ADD ./start.sh /start.sh
 
 RUN chmod +x /start.sh && ./start.sh
 ADD ./run.sh  /home/x2gouser/run.sh
-ADD ./sshd_config /home/user/etc/ssh/sshd_config
+ADD ./sshd_config /home/x2gouser/etc/ssh/sshd_config
 RUN chmod +x /home/x2gouser/run.sh
 EXPOSE 2022
 
