@@ -13,6 +13,8 @@ HOME=/home/x2gouser
 ssh-keygen -t rsa -f /home/x2gouser/etc/ssh/ssh_host_rsa_key -N '' 
 ssh-keygen -t ecdsa -f /home/x2gouser/etc/ssh/ssh_host_ecdsa_key -N '' 
 ssh-keygen -t ed25519 -f /home/x2gouser/etc/ssh/ssh_host_ed25519_key -N '' 
+
+getent passwd 2xgouser
 }
 
 # Call all functions

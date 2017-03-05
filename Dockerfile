@@ -9,6 +9,7 @@ RUN yum install -y  --setopt=tsflags=nodocs \
     terminator gettext nss_wrapper
 
 RUN yum -y groupinstall Xfce --setopt=tsflags=nodocs 
+RUN yum -y install nss_wrapper --setopt=tsflags=nodocs 
 
 ## fix the locale crap 
 #RUN yum -y reinstall glibc-common
