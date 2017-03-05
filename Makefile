@@ -11,7 +11,7 @@ clean:
 	sudo docker rm -f   $(NAME):$(VERSION) 
 
 test:
-	sudo docker run -p 2222:22 --rm=true $(NAME):$(VERSION)
+	sudo docker run -p 2022:2022 --rm=true $(NAME):$(VERSION)
 
 tag_latest:
 	docker tag -f $(NAME):$(VERSION) $(NAME):latest
