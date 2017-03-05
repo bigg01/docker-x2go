@@ -16,7 +16,8 @@ RUN yum -y groupinstall Xfce --setopt=tsflags=nodocs
 ADD ./start.sh /start.sh
 
 RUN chmod +x /start.sh && ./start.sh
-EXPOSE 22
+ADD ./sshd_config /home/user/etc/ssh/sshd_config
+EXPOSE 2022
 
 USER user
 CMD    ["/usr/sbin/sshd", "-f", "/home/user/etc/ssh/sshd_config", "-D"]
