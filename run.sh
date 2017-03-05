@@ -10,8 +10,11 @@ HOME=/home/x2gouser
   export LD_PRELOAD=libnss_wrapper.so
   export NSS_WRAPPER_PASSWD=${HOME}/passwd
   export NSS_WRAPPER_GROUP=/etc/group
+ssh-keygen -t rsa -f /home/x2gouser/etc/ssh/ssh_host_rsa_key -N '' 
+ssh-keygen -t ecdsa -f /home/x2gouser/etc/ssh/ssh_host_ecdsa_key -N '' 
+ssh-keygen -t ed25519 -f /home/x2gouser/etc/ssh/ssh_host_ed25519_key -N '' 
 }
 
 # Call all functions
-__create_x2gouser
+generate_passwd_file
 /usr/sbin/sshd -f /home/x2gouser/etc/ssh/sshd_config -D -d

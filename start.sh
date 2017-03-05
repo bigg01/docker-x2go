@@ -19,9 +19,6 @@ sed -i "s/*.HostKey \/etc\/ssh\/ssh_host_rsa_key/HostKey \/home\/x2gouser\/etc\/
 sed -i "s/*.HostKey \/etc\/ssh\/ssh_host_ecdsa_key.*/HostKey \/home\/x2gouser\/etc\/ssh_host_ecdsa_key/g" etc/ssh/sshd_config && \
 sed -i "s/*.HostKey \/etc\/ssh\/ssh_host_ed25519_key.*/HostKey \/home\/x2gouser\/etc\/ssh_host_ed25519_key/g" etc/ssh/sshd_config && \
 mkdir /var/run/sshd && \
-ssh-keygen -t rsa -f /home/x2gouser/etc/ssh/ssh_host_rsa_key -N '' && \
-ssh-keygen -t ecdsa -f /home/x2gouser/etc/ssh/ssh_host_ecdsa_key -N '' && \
-ssh-keygen -t ed25519 -f /home/x2gouser/etc/ssh/ssh_host_ed25519_key -N '' && \
 chown -R x2gouser: /home/x2gouser/
 yum clean all
 
